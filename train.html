@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Booking</title>
+    <link rel="stylesheet" href="train.css">
+    <link rel="stylesheet" href="extend.css">
+</head>
+<body>
+    <header>
+        <div id="header">
+            <div id="sidebar" class="sidebar">
+                <ul>
+                  <li> </li>
+                  <li> </li>
+                  <li style="padding-top: 60px; cursor: pointer; text-align: left;" ><a href="index.html">Home</li></a>
+                  <li style="text-align: left;"><a href="aboutus.html">About Us</li></a>
+                  <li style="text-align: left;"><a href="feedback.html">Feedback</li></a>
+                  <li style="text-align: left; color: black;">Travel History</li>
+                  <li style="text-align: left; color: black;">Transportation Booking</li>
+                  <li style="text-align: left;"><a href="https://www.accuweather.com/" target="_blank">Weather Forecast</a></li>
+
+                  <li style="text-align: left; color: black;">Route</li>
+                  <li style="text-align: left;"><a href="https://www.google.com/maps?q=Your+Location" target="_blank">Open in Google Maps</a></li>
+                  <li style="text-align: left; color: black;">Compare Fare</li>
+                </ul>
+              </div>
+            <button id="toggleButton" class="toggle-button">☰</button>
+        <div class="logo">
+            <h1>Book your train with Saathi-Your Adventure Partner</h1>
+        </div>
+        <nav>
+            <ul>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section class="booking-form">
+        <h2>Book Your Train</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="from">From:</label>
+                <input type="text" id="from" name="from" placeholder="City or Station" required>
+            </div>
+            <div class="form-group">
+                <label for="to">To:</label>
+                <input type="text" id="to" name="to" placeholder="City or Station" required>
+            </div>
+            <div class="form-group">
+                <label for="travel-date">Travel Date:</label>
+                <input type="date" id="travel-date" name="travel-date" required>
+            </div>
+            <div class="form-group" id="notblue">
+                <button type="submit"><a href="train_result.html">Search Trains</button>
+            </div></a>
+        </form>
+    </section>
+
+    
+
+    <footer>
+        <p>&copy; 2024 TrainGo. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

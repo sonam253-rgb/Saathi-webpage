@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Booking Results</title>
+  <link rel="stylesheet" href="flight_result.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Available Flights</h1>
+    </header>
+    <main>
+      <div id="flightResults" class="results-container">
+        <p>Loading flight options...</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Booking Dialog -->
+  <div class="dialog-container" id="bookingDialog">
+    <div class="dialog-box">
+      <h3>Flight Booking</h3>
+      <div id="dialogContent">
+        <!-- Dynamic content will be inserted here -->
+      </div>
+      <button class="close-btn" onclick="closeDialog()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Function to show the booking dialog
+    function bookFlight(flightName, price) {
+      const dialog = document.getElementById('bookingDialog');
+      const dialogContent = document.getElementById('dialogContent');
+
+      dialogContent.innerHTML = `
+        <p><strong>Flight:</strong> ${flightName}</p>
+        <p><strong>Price per ticket:</strong> ₹${price}</p>
+        <div class="form-group">
+          <label for="numPassengers">Number of Passengers:</label>
+          <input type="number" id="numPassengers" min="1" max="10" value="1" onchange="generatePassengerFields()">
+        </div>
+        <div id="passengerDetails"></div>
+        <div class="form-group">
+          <label for="paymentMethod">Payment Method:</label>
+          <select id="paymentMethod">
+            <option value="credit_card">Credit Card</option>
+            <option value="debit_card">Debit Card</option>
+            <option value="upi">UPI</option>
+            <option value="net_banking">Net Banking</option>
+            <option value="wallet">Wallet</option>
+          </select>
+        </div>
+        <button class="pay-btn" onclick="payNow()">Pay Now</button>
+      `;
+
+      generatePassengerFields(); // Generate fields for passenger details
+      dialog.style.display = 'flex';
+    }
+
+    // Function to generate passenger details fields
+    function generatePassengerFields() {
+      const numPassengers = document.getElementById('numPassengers').value;
+      const passengerDetails = document.getElementById('passengerDetails');
+
+      let fields = '';
+      for (let i = 1; i <= numPassengers; i++) {
+        fields += `
+          <div class="form-group">
+            <label for="passengerName${i}">Passenger ${i} Name:</label>
+            <input type="text" id="passengerName${i}" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+            <label for="passengerGender${i}">Passenger ${i} Gender:</label>
+            <select id="passengerGender${i}">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        `;
+      }
+
+      passengerDetails.innerHTML = fields;
+    }
+
+    // Function to close the dialog
+    function closeDialog() {
+      document.getElementById('bookingDialog').style.display = 'none';
+    }
+
+    // Function to handle payment
+    function payNow() {
+      const paymentMethod = document.getElementById('paymentMethod').value;
+      alert(`Payment successful via ${paymentMethod.toUpperCase()}! Booking confirmed.`);
+      closeDialog();
+    }
+
+    // Display flight results dynamically
+    const params = new URLSearchParams(window.location.search);
+    const from = params.get('from');
+    const to = params.get('to');
+    const date = params.get('date');
+
+    document.getElementById('flightResults').innerHTML = `
+      <h2>Results for: ${from} to ${to}</h2>
+      <p>Travel Date: ${date}</p>
+      <ul>
+        <li>
+          <strong>Flight 1:</strong> Indigo - ₹5,000 <br>
+          <em>Departure:</em> 07:30 AM <em>Arrival:</em> 09:30 AM <br>
+          <em>Class:</em> Economy <br>
+          <em>Duration:</em> 2 hours
+          <button onclick="bookFlight('Indigo', 5000)">Book Now</button>
+        </li>
+        <li>
+          <strong>Flight 3:</strong> Vistara - ₹7,000 <br>
+          <em>Departure:</em> 02:00 PM <em>Arrival:</em> 04:00 PM <br>
+          <em>Class:</em> Premium Economy, Economy <br>
+          <em>Duration:</em> 2 hours
+          <button onclick="bookFlight('Vistara', 7000)">Book Now</button>
+        </li>
+        <li>
+          <strong>Flight 4:</strong> SpiceJet - ₹4,800 <br>
+          <em>Departure:</em> 05:00 PM <em>Arrival:</em> 07:00 PM <br>
+          <em>Class:</em> Economy <br>
+          <em>Duration:</em> 2 hours
+          <button onclick="bookFlight('SpiceJet', 4800)">Book Now</button>
+        </li>
+        <li>
+          <strong>Flight 5:</strong> GoAir - ₹4,200 <br>
+          <em>Departure:</em> 06:30 AM <em>Arrival:</em> 08:30 AM <br>
+          <em>Class:</em> Economy <br>
+          <em>Duration:</em> 2 hours
+          <button onclick="bookFlight('GoAir', 4200)">Book Now</button>
+        </li>
+        <li>
+          <strong>Flight 6:</strong> Emirates - ₹15,000 <br>
+          <em>Departure:</em> 11:00 AM <em>Arrival:</em> 02:00 PM <br>
+          <em>Class:</em> First Class, Business <br>
+          <em>Duration:</em> 3 hours
+          <button onclick="bookFlight('Emirates', 15000)">Book Now</button>
+        </li>
+      </ul>
+    `;
+  </script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+html, body {
+   height: 100%;
+   width: 100%;
+   overflow-x: hidden;
+}
+#textbw{
+   color: black;
+   
+}
+
+.welcome-palette {
+   width: 800px;
+   height: 250px;
+   padding: 20px;
+   background-color: #e1be977b;
+   background-image: url('wlcm.jpg');; /* Replace with your actual image URL */
+   background-size: cover; /* Ensure the image covers the entire div */
+   background-position: center; /* Center the image within the div */
+   border: 5px solid #fff;  /* Adds a white border around the palette */
+   border-radius: 15px;  /* Optional: Adds rounded corners to the border */
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);  /* Adds a soft shadow around the palette */
+   position: relative;  
+}
+
+ 
+    
+
+
+#header {
+   height: 13%;
+   width: 100%;
+   justify-content: space-around;
+   background-color: rgba(255, 187, 0, 0.937);
+   display: flex;
+   align-items: center;
+   position: fixed;
+   z-index: 1000;
+}
+
+#fakeheader {
+   height: 13%;
+   width: 100%;
+   background-color: rgba(255, 187, 0, 0.937);
+}
+
+
+#logo img {
+   align-items: center;
+   justify-content: center;
+   padding-top: 75px;
+   padding-left: 150px;
+}
+
+
+#profile {
+   display: flex;
+   justify-content: right;
+   align-items: center;
+   padding: 5px 10px;
+   margin-right: 20px;
+   color: rgb(155, 62, 62);
+   cursor: pointer;
+}
+
+#profile h5{
+   padding-left: 4px;
+}
+
+
+
+#profile:hover {
+   background-color: rgb(25, 204, 48);
+}
+
+.vehicle {
+   padding: 10px;
+   color: rgb(9, 68, 4);
+   cursor: pointer;
+}
+
+.vehicle:hover {
+   color: rgb(25, 204, 48);
+}
+
+#page1 {
+   height: 87%;
+   width: 100%;
+   position: relative;
+   overflow: hidden; /* Ensures no content spills out */
+   background-color: white;
+   color: whitesmoke;
+   display: flex;
+   align-items: end;
+   justify-content: right;
+   position: relative;
+   z-index: 1;
+}
+
+
+#webBack img{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   z-index: -1; /* Places it behind other content */
+}
+
+#page2{
+   height: 87%;
+    width: 100%;
+   background-color:white;
+   position: relative;
+}
+
+
+#main {
+   display: flex;
+   flex-wrap: wrap; 
+   justify-content: center; 
+   align-items: center; 
+   gap: 20px; 
+   background-color:white; 
+   box-shadow: 0 4px 10px black;
+}
+
+.container {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+
+   background-color: #e0e0e0; 
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   max-width: 100%; 
+   overflow: hidden;
+   justify-content: center;
+}
+
+.container img {
+   filter: saturate(0%);
+    width: 10%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid white;
+    transition: all ease-out 1s;
+    cursor: pointer;
+   max-width: 300px; 
+   border-radius: 10px; 
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+   transition: transform 0.3s ease; 
+}
+
+
+.container img:hover{
+    filter: saturate(100%);
+    width: 100%;
+}
+
+
+
+#page3 {
+   height: 87%;
+   width: 100%;
+   background-color:white;
+}
+
+#main3{
+   height: 100%;
+   width: 100%;
+   /* background-color: bisque; */
+   display: flex;
+   align-items: center;
+   /* justify-content:space-around; */
+}
+
+.card{
+   height: 430px;
+   width: 300px;
+   border: 2px solid whitesmoke;
+   border-radius: 20px;
+   z-index: 50;
+   margin-left: 50px;
+}
+
+.card h2{
+   color: rgb(9, 129, 39);
+   margin: 20px 30px;
+   font-size: large;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.card p{
+   font-size: large;
+   margin: 20px 30px;
+   font-weight: lighter;
+}
+
+.card u{
+   margin: 20px 30px;
+   color:rgb(0, 0, 80) ;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.card u:hover{
+   color:rgb(42, 144, 181) ;
+}
+
+#card1{
+   background-color: rgba(255, 187, 0, 0.937);
+   margin-left: 70px;
+  
+}
+
+#card1 img{
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   border-radius:20px;
+}
+
+
+#card2{
+   background-color:rgba(255, 187, 0, 0.937);
+   /* margin-left: 50px; */
+}
+
+#card2 img{
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   border-radius:20px;
+}
+#card3{
+   background-color: rgba(255, 187, 0, 0.937);
+   /* margin-left: 50px; */
+}
+#card3 img{
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   border-radius:20px;
+}
+
+#card4{
+   background-color: rgba(255, 187, 0, 0.937);
+   margin-right: 50px;
+}
+#card4 img{
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   border-radius:20px;
+}
+
+
+/* img{
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   border-radius:20px;
+} */
+
+#image{
+   height: 40%;
+   width: 100%;
+   object-fit: cover;    
+}
+
+#image h3{
+   /* font-weight:100; */
+   color: rgb(0, 0, 80);
+   font-size: 65px;
+   margin: 30px 50px;
+}
+
+#image h3:hover{
+   background-color:rgb(190, 218, 228) ;
+}
+
+#image p{
+   font-size: xx-large;
+   margin: 30px 50px;
+   font-weight: lighter;
+}
+
+
+#AI {
+   position: absolute; /* Positioning to align both images */
+   bottom: 0; /* Align to the bottom */
+   left: 0; /* Align to the left */
+   padding-left: 10px; /* Optional: Add some padding if needed */
+   margin-left: 0;
+   margin-bottom: 10px; /* Optional: Adjust margin from bottom */
+}
+
+#aiImage {
+   width: 60px; /* Original AI image size */
+   height: 60px; /* Original AI image size */
+   cursor: pointer;
+}
+
+#newImage {
+   position: absolute; /* Position it absolutely */
+   bottom: 0; /* Align with the bottom of the container */
+   left: 0; /* Align with the left of the container */
+   display: none; /* Initially hidden */
+   cursor: pointer;
+   top: 75%;
+   right: 93%;
+   transform: scale(0.6);
+}
+
+#background {
+   padding-right: 20px;
+   margin-bottom: 0;
+   padding-bottom: 0;
+   display: block;
+} 
